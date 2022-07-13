@@ -1,0 +1,58 @@
+.filterComponent {
+    background-color: #5b5b5b;
+    display: flex;
+    overflow: hidden;
+    flex-direction: row;
+    justify-content: center;
+    margin: auto;
+    min-width: 1440px;
+    align-items: center;
+    padding: 4px 0px;
+  }
+  .filter__container {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  .filter {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 6px 12px;
+
+    &__filterBy {
+      font-size: 12px;
+      font-family: Rubik;
+      line-height: 16px;
+      text-transform: uppercase;
+      color: #c0c0c0;
+    }
+
+    &__button {
+      display: flex;
+      flex-direction: row;
+      gap: 6px;
+      justify-content: flex-start;
+      align-items: center;
+      border-radius: 40px;
+      padding: 0px;
+      border-width: 0px;
+      background: none;
+      box-sizing: content-box;
+      cursor: pointer;
+  
+      &:hover {
+        opacity: 70%;
+      }
+    }
+
+    &__clear {
+      width: 16px;
+      height: 16px;
+    }
+  }

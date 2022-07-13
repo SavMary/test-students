@@ -1,6 +1,6 @@
 import React from 'react';
 import { Test } from '../../react-app-env';
-import './TestComponent.css';
+import './TestComponent.scss';
 
 type Props = {
     tests: Test[] | null,

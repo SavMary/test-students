@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { setCurrentPage, setCurrentSize } from '../../store';
 import { getCurrentPageSelector, getCurrentSizeSelector, getTotalPageSelector, getTotalSizeSelector } from '../../store/selectors';
-import './Footer.css';
+import './Footer.scss';
 
 export const Footer: React.FC = () => {
   const dispatch = useDispatch();

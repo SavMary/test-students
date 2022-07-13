@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { getData } from '../../api/api';
-import { Data } from '../../react-app-env';
 import { setData, setTotalPage, setTotalSize } from '../../store';
 import { CSVLink } from 'react-csv';
 import { TableHeadComponent } from '../TableHeadComponent/TableHeadComponent';
-import './HeadLineComponent.css';
+import './SubHeader.scss';
 import { useSelector } from 'react-redux';
 import { getCurrentPageSelector, getCurrentSizeSelector, getDataSelector } from '../../store/selectors';
 
@@ -18,7 +17,7 @@ const headers = [
   {label: "Parents", key: "parents"},
 ];
 
-export const HeadLineComponent = () => {
+export const SubHeader: React.FC = () => {
   const dispatch = useDispatch();
   const data = useSelector(getDataSelector);
   const page = useSelector(getCurrentPageSelector);
@@ -38,15 +37,17 @@ export const HeadLineComponent = () => {
     dispatch(setTotalSize(dataFromServer.totalCount));
   }
   useEffect(() => {
-    setTotalParams();
+    try {
+      setTotalParams();
+    } catch (error) {
+      console.log(error)
+    }
   },[])
 
   const loadDataFromServer = async () => {
     const dataFromServer = await getData(page, size);
 
     dispatch(setData(dataFromServer.data));
-    // dispatch(setTotalPage(dataFromServer.totalPages));
-    // dispatch(setTotalSize(dataFromServer.totalCount));
 
     console.log('total', dataFromServer.data)
   };
@@ -63,12 +64,12 @@ export const HeadLineComponent = () => {
 
   return (
     <>
-      <div className="headlineRoot">
-        <p className="text5">Students</p>
-        <div className="searchMaster">
-          <label className="nameIcon">
+      <div className="head">
+        <p className="head__text">Students</p>
+        <div className="head__search">
+          <label className="head__label">
             <input
-              className="enterLabelHere"
+              className="head__input"
               type="text"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
@@ -78,14 +79,14 @@ export const HeadLineComponent = () => {
         </div>
         <button 
           type='button'
-          className="buttonText"
+          className="head__button"
         >
           <img
             className="search"
             src={'https://file.rendit.io/n/nPbnskXg4iEFZKCumB8F.svg'}
             alt=""
           />
-          <CSVLink {...csvReport} className="remove">Export CSV</CSVLink>
+          <CSVLink {...csvReport} className="head__export">Export CSV</CSVLink>
         </button>
       </div>
       <TableHeadComponent title={title} />

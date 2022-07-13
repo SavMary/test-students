@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Data, Test } from '../../react-app-env';
 import classNames from 'classnames';
-import './TableComponent.css';
+import './TableComponent.scss';
 import { TestComponent } from '../TestComponent/TestComponent';
 
 type Props = {
@@ -13,10 +13,8 @@ export const TableComponent:React.FC<Props> = ({ data }) => {
   const [isSelected, setIsSelected] = useState(false);
 
   const handlerClick = (data: Data) => {
-    isSelected 
-    ? setIsSelected(false) 
-    : setTests(data.tests);
-      setIsSelected(true);
+    setTests(data.tests);
+      setIsSelected(!isSelected);
   }
 
   return (

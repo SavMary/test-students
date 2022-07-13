@@ -1,0 +1,75 @@
+.mainHeader {
+    background-color: #ffffff;
+    display: flex;
+    overflow: hidden;
+    flex-direction: row;
+    justify-content: center;
+    margin: auto;
+    min-width: 1360px;
+    align-items: center;
+    padding: 14px 40px;
+
+    &__logo {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      justify-content: flex-start;
+      align-items: center;
+      margin: 0 63px 0 0;
+    }
+
+    &__dropDown {
+      display: flex;
+      flex-direction: row;
+      gap: 4px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__menu{
+      display: flex;
+      flex-direction: row;
+      gap: 16px;
+      justify-content: center;
+      align-items: center;
+      margin: 0 300px 0 0;
+    }
+
+    &__userName{
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__selected-text {
+      display: flex;
+      font-size: 14px;
+      font-family: Rubik;
+      font-weight: 700;
+      line-height: 19.6px;
+      text-transform: uppercase;
+      color: #ffffff;
+      background-color: #a6192e;
+      flex-direction: row;
+      gap: 10px;
+      justify-content: center;
+      align-items: center;
+      padding: 6px 12px;
+    }
+  }
+
+  .text1 {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    text-transform: uppercase;
+    color: inherit;
+  }
+
+  .ellipse {
+    width: 32px;
+    height: 32px;
+  }
+  

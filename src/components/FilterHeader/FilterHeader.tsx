@@ -1,58 +1,58 @@
 import React from 'react';
-import './Filter.css';
+import './FilterHeader.scss';
 
-export const Filter = () => {
+export const FilterHeader: React.FC = () => {
   return (
-    <div className='filterRoot'>
-    <div className='filteringComponents'>
+    <div className='filterComponent'>
+    <div className='filter__container'>
       <div className='filter'>
-        <a className='filterBy'>show all</a>
+        <a href='#home' className='filter__filterBy'>show all</a>
         <img className='arrowdropdown'
           src={"https://file.rendit.io/n/24XtWApHtH3QFhuD24Hx.svg"}
           alt=""
         />
       </div>
       <div className='filter'>
-        <a className='filterBy'>All grades</a>
+        <a href='#home' className='filter__filterBy'>All grades</a>
         <img className='arrowdropdown'
           src={"https://file.rendit.io/n/24XtWApHtH3QFhuD24Hx.svg"}
           alt=""
         />
       </div>
       <div className='filter'>
-        <a className='filterBy'>All classes</a>
+        <a href='#home' className='filter__filterBy'>All classes</a>
         <img className='arrowdropdown'
           src={"https://file.rendit.io/n/24XtWApHtH3QFhuD24Hx.svg"}
           alt=""
         />
       </div>
       <div className='filter'>
-        <a className='filterBy'>Av.Score</a>
+        <a href='#home' className='filter__filterBy'>Av.Score</a>
         <img className='arrowdropdown'
           src={"https://file.rendit.io/n/24XtWApHtH3QFhuD24Hx.svg"}
           alt=""
         />
       </div>
       <div className='filter'>
-        <a className='filterBy'>Av.Speed</a>
+        <a href='#home' className='filter__filterBy'>Av.Speed</a>
         <img className='arrowdropdown'
           src={"https://file.rendit.io/n/24XtWApHtH3QFhuD24Hx.svg"}
           alt=""
         />
       </div>
       <div className='filter'>
-        <a className='filterBy'>All Classes</a>
+        <a href='#home' className='filter__filterBy'>All Classes</a>
         <img className='arrowdropdown'
           src={"https://file.rendit.io/n/24XtWApHtH3QFhuD24Hx.svg"}
           alt=""
         />
       </div>
-      <button className='buttonText'>
-        <img className='clear' 
+      <button className='filter__button'>
+        <img className='filter__clear' 
           src={"https://file.rendit.io/n/MeUKcoi6WUhzRPPYXimy.svg"} 
           alt=""
         />
-        <p className='filterBy'>clear all</p>
+        <p className='filter__filterBy'>clear all</p>
       </button>
     </div>
   </div>

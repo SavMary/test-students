@@ -1,0 +1,98 @@
+.table {
+    width: 1360px;
+    height: 48px;
+    box-shadow: 0 1px 4px 0 #f2f2f2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    transition: 300ms;
+
+    &:not(:first-child) {
+        cursor: pointer;
+    }
+    
+    &:not(:first-child):hover {
+        transform: scale(1.01);
+    }
+
+    &__checkbox {
+        padding-right: 26px;
+    }
+    
+    &__name {
+        padding-right: 230px;
+        width: 100px;
+
+        &:first-child {
+            padding-right: 200px;
+        }
+    }
+    
+    &__speed {
+        padding-right: 32px;
+
+        &:first-child {
+            padding-right: 20px;
+        }
+    }
+    
+    &__parents {
+        padding-right: 174px;
+    }
+
+    &__id {
+        padding-right: 28px;
+        width: 78px;
+
+        &:first-child {
+            padding-left: 10px;
+            padding-right: 0;
+        }
+    }
+  
+    &__class {
+        padding-right: 44px;
+        width: 40px;
+    }
+  
+    &__score {
+        padding-right: 78px;
+        width: 75px;
+    }
+  
+    &__flex {
+      display: flex;
+    }
+}
+
+.tableLine {
+    display: flex;
+    overflow: hidden;
+    font-size: 14px;
+    padding: 0 19px 0 21px;
+}
+
+.evenRow {
+    background-color: #f9f9f9;
+}
+
+.oddRow {
+    background-color: #ffff;
+}
+
+.red {
+    color: #DB4437;
+}
+
+.green {
+    color: #0F9D58;
+}
+
+.blue {
+    color: #4285F4;
+}
+
+.yellow {
+    color: #E2B534;
+}
