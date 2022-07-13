@@ -5,6 +5,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    cursor: pointer;
+    transition: 300ms;
+}
+
+.table:not(:first-child):hover {
+    transform: scale(1.01);
 }
 
 .tableLine {
@@ -17,39 +23,53 @@
 .table__checkbox {
     padding-right: 26px;
 }
+
 .table__name {
     padding-right: 230px;
+    width: 100px;
 }
-.table__id {
+
+/* .table__id {
     padding-right: 28px;
-}
-.table__class {
+    width: 96px;
+} */
+
+/* .table__class {
     padding-right: 44px;
-}
-.table__score {
+} */
+
+/* .table__score {
     padding-right: 98px;
-}
+} */
+
 .table__speed {
     padding-right: 32px;
 }
+
 .table__parents {
     padding-right: 174px;
 }
+
 .evenRow {
     background-color: #f9f9f9;
 }
+
 .oddRow {
     background-color: #ffff;
 }
+
 .red {
     color: #DB4437;
 }
+
 .green {
     color: #0F9D58;
 }
+
 .blue {
     color: #4285F4;
 }
+
 .yellow {
     color: #E2B534;
 }

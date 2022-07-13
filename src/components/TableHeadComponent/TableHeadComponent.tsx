@@ -20,15 +20,15 @@ export const TableHeadComponent: React.FC<Props>= ({ title }) => {
             <input type="checkbox" />
           </label>
 
-          <div className='name2'>
-            <p>Name</p>
+          <div className='table__flex'>
+            <p className='table__name'>Name</p>
             <img
               src="https://file.rendit.io/n/NAFPya2vlkn7RhC37dtp.svg"
               alt=""
             />
           </div>
 
-          <div className="id1">
+          <div className='table__flex'>
             <p className="table__id">ID</p>
             <img
               src="https://file.rendit.io/n/4F3xOmoR8m0iwPxkCqu0.svg"
@@ -36,22 +36,24 @@ export const TableHeadComponent: React.FC<Props>= ({ title }) => {
             />
           </div>
 
+          <div>
           <p className="table__class">Class</p>
-
-          <div className="id1">
-            <p className="table__score">Av. Score, %</p>
-            <img
-              src="https://file.rendit.io/n/4F3xOmoR8m0iwPxkCqu0.svg"
-              alt=""
-            />
           </div>
 
-          <div className="avspeed">
+          <div>
+            <p className="table__score">Av. Score, %</p>
+            {/* <img
+              src="https://file.rendit.io/n/4F3xOmoR8m0iwPxkCqu0.svg"
+              alt=""
+            /> */}
+          </div>
+
+          <div >
             <p className="table__speed">Av. Speed</p>
-            <img
+            {/* <img
               src={'https://file.rendit.io/n/4F3xOmoR8m0iwPxkCqu0.svg'}
               alt=""
-            />
+            /> */}
           </div>
 
           <p className="table__parents">Parents</p>

@@ -1,8 +1,7 @@
-  .id1 {
-    padding-right: 74px;
+  /* .id1 {
+    width: 74px;
+    padding-left: 26px;
     display: flex;
-    flex-direction: row;
-    gap: 6px;
     justify-content: flex-start;
     align-items: center;
   }
@@ -12,47 +11,62 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+  } */
+
+  .tableContainer {
+      width: 1360px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: auto;
   }
 
-   .tableContainer {
-    width: 1360px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-   }
+  .tableLine {
+      display: flex;
+      overflow: hidden;
+      font-size: 14px;
+      padding: 0px 19px 0px 21px;
+  }
 
-.tableLine {
-    display: flex;
-    overflow: hidden;
-    font-size: 14px;
-    padding: 0px 19px 0px 21px;
-}
-.name2 {
+  /* .name2 {
   width: 300px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-}
-.table__checkbox {
-    padding-right: 26px;
-}
-.table__name {
-    padding-right: 230px;
-}
-.table__id {
-    padding-right: 28px;
-}
-.table__class {
-    padding-right: 44px;
-}
-.table__score {
-    padding-right: 98px;
-}
-.table__speed {
-    padding-right: 32px;
-}
-.table__parents {
-    padding-right: 174px;
-}
+} */
+  .table__checkbox {
+      padding-right: 26px;
+  }
+
+  .table__name {
+      padding-right: 230px;
+  }
+
+  .table__id {
+      padding-right: 28px;
+      width: 78px;
+  }
+
+  .table__class {
+      padding-right: 44px;
+      width: 40px;
+  }
+
+  .table__score {
+      padding-right: 78px;
+      width: 75px;
+  }
+
+  .table__speed {
+      padding-right: 32px;
+  }
+
+  .table__parents {
+      padding-right: 174px;
+  }
+
+  .table__flex {
+    display: flex;
+  }

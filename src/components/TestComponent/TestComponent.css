@@ -1,0 +1,166 @@
+.testTable {
+    width: 1360px;
+    background-color: #F2F2F2;
+}
+
+.testTable__container {
+    padding: 20px 60px;
+}
+
+.testTable__info {
+    display: flex;
+    justify-content: start;
+    padding-bottom: 12px;
+}
+
+.student {
+    text-transform: uppercase;
+    padding-right: 8px;
+}
+
+.student__data {
+   font-weight: bold;
+   text-transform: uppercase;
+   padding-right: 15px;
+   color: #5b5b5b;
+}
+
+.button {
+    box-sizing: border-box;
+    width: 154px;
+    height: 32px;
+    border: 1px solid #C0C0C0;
+    box-sizing: border-box;
+    background-color: #fff;
+    color: #5b5b5b;
+    margin-right: 16px;
+    cursor: pointer;
+}
+
+.testTable__data {
+    width: 200px;
+    background-color: transparent;
+    border-color: transparent;
+    border-bottom: 1px solid #c0c0c0;
+    color: #c0c0c0;
+}
+
+.testTable__buttons {
+    padding-bottom: 12px;
+}
+
+.testTable__row {
+    width: 1102px;
+    border-bottom: 1px solid #A6192E;
+}
+
+.testTable__score {
+    display: flex;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+    padding-top: 12px;
+}
+.testTable__speed {
+    display: flex;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+    padding-top: 8px;
+}
+.testTable__blue {
+    color: #4285F4;
+    padding-right: 24px;
+    display: flex;
+}
+.testTable__blue-circle{
+    display: block;
+    margin-right: 8px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #4285F4;
+}
+.testTable__green {
+    color: #0F9D58;
+    padding-right: 24px;
+    display: flex;
+}
+.testTable__green-circle{
+    display: block;
+    margin-right: 8px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #0F9D58;
+}
+.testTable__yellow {
+    color: #E2B534;
+    padding-right: 24px;
+    display: flex;
+}
+.testTable__yellow-circle{
+    display: block;
+    margin-right: 8px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #E2B534;
+}
+.testTable__red {
+    color: #DB4437;
+    padding-right: 24px;
+    display: flex;
+}
+.testTable__red-circle{
+    display: block;
+    margin-right: 8px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #DB4437;
+}
+.point {
+    padding-right: 24px;
+}
+.testTable__header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+}
+.testTable__header-id {
+    width: 12px;
+    padding-right: 22px;
+}
+.testTable__header-label{
+    width: 194px;
+    padding-right: 110px;
+}
+.testTable__header-score {
+    width: 38px;
+    padding-right: 22px;
+}
+.testTable__header-speed {
+    width: 88px;
+    padding-right: 38px;
+}
+.testTable__header-total {
+    width: 68px;
+    padding-right: 12px;
+}
+.testTable__header-exp {
+    width: 98px;
+    padding-right: 34px;
+}
+.testTable__header-concept {
+width: 140px;
+padding-right: 24px;
+}
+.testTable__header-date {
+    width: 96px;
+    padding-right: 45px;
+}
+.testTable__header-absent {
+    width: 48px;
+    padding-right: 222px;
+}

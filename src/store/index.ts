@@ -13,7 +13,7 @@ const initialState: State = {
     totalPage: 0,
     currentPage: 1,
     totalSize: 0,
-    currentSize: 5,
+    currentSize: 1,
   };
 
 const reducer = createReducer(initialState, (builder) => {
