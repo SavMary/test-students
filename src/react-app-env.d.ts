@@ -1,20 +1,18 @@
 /// <reference types="react-scripts" />
 export interface State {
-    // data: Obj,
     data: Data[],
     totalPage: number,
     currentPage: number,
     totalSize: number,
     currentSize: number,
-//   tests: Test[]
 }
 
-interface Obj {
-  totalPages: number,
-  data: Data[],
-  tests: Test[],
-  totalCount: number,
-}
+// interface Obj {
+//   totalPages: number,
+//   data: Data[],
+//   tests: Test[],
+//   totalCount: number,
+// }
 
 interface Data {
     name: string,
@@ -23,6 +21,7 @@ interface Data {
     score: string,
     speed: string,
     parents: string[] | null,
+    tests: Test[],
 }
 
 interface Test {

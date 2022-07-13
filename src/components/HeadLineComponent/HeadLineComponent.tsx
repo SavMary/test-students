@@ -32,12 +32,23 @@ export const HeadLineComponent = () => {
     data,
   }
 
+  const setTotalParams = async () => {
+    const dataFromServer = await getData(page, size);
+    dispatch(setTotalPage(dataFromServer.totalPages));
+    dispatch(setTotalSize(dataFromServer.totalCount));
+  }
+  useEffect(() => {
+    setTotalParams();
+  },[])
+
   const loadDataFromServer = async () => {
     const dataFromServer = await getData(page, size);
 
     dispatch(setData(dataFromServer.data));
-    dispatch(setTotalPage(dataFromServer.totalPages));
-    dispatch(setTotalSize(dataFromServer.totalCount));
+    // dispatch(setTotalPage(dataFromServer.totalPages));
+    // dispatch(setTotalSize(dataFromServer.totalCount));
+
+    console.log('total', dataFromServer.data)
   };
 
   useEffect(() => {

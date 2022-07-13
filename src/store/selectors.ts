@@ -5,7 +5,6 @@ export const getTotalPageSelector = (state: State) => state.totalPage;
 export const getCurrentPageSelector = (state: State) => state.currentPage;
 export const getTotalSizeSelector = (state: State) => state.totalSize;
 export const getCurrentSizeSelector = (state: State) => state.currentSize;
-// export const getTestsSelector = (state: State) => state.tests;
 export const getFilteredByTitleSelector = (query: string) => {
     return (state: State) => {
       return state.data.filter(item => (

@@ -9,15 +9,12 @@
     height: 20px;
 }
 
-.footer__move {
-    width: 20px;
-    height: 20px;
-    padding-left: 25px;
-}
-
 .footer__arrow {
     color: #5B5B5B;
     background-color: transparent;
     border: transparent;
     cursor: pointer;
+    width: 10px;
+    height: 20px;
+    padding-left: 25px;
 }

@@ -8,7 +8,6 @@ type Props = {
 }
 
 export const TableComponent:React.FC<Props> = ({ data }) => {
-    console.log(data)
   return (
     <div className={classNames('table', {
         oddRow: data.id % 2 !== 0,

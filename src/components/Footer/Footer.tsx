@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
@@ -33,61 +34,89 @@ export const Footer: React.FC = () => {
     dispatch(setCurrentSize(+amount));
   }
 
-  const increaseSize = () => {
+  const increasePage = () => {
     if (currentPage === totalPage) {
       setAvailableToIncrease(false);
     } else {
       setAvailableToIncrease(true);
       dispatch(setCurrentPage(currentPage + 1))
     }
+    console.log({totalPage}, {currentPage}, 'from increase')
   }
 
-  const decreaseSize = () => {
-    if (currentPage === 0) {
+  useEffect(() => {
+    switch (true) {
+      case currentPage === 1:
+        setAvailableToIncrease(true);
+        setAvailableToDecrease(false);
+        break;
+
+      case currentPage === totalPage:
+        setAvailableToIncrease(false);
+        setAvailableToDecrease(true);
+        break;
+
+      default:
+        setAvailableToIncrease(true);
+        setAvailableToDecrease(true);
+        break;
+    }
+    // if (currentPage === 1) {
+    //   setAvailableToIncrease(true);
+    //   setAvailableToDecrease(false);
+    // }
+
+    // if (currentPage === totalPage) {
+    //   setAvailableToIncrease(false);
+    //   setAvailableToDecrease(true); 
+    // }
+  }, [currentPage])
+
+  const decreasePage = () => {
+    if (currentPage === 1) {
       setAvailableToDecrease(false);
     } else {
       setAvailableToDecrease(true);
       dispatch(setCurrentPage(currentPage - 1))
     }
+
+    console.log({totalPage}, {currentPage}, 'from decrease')
   }
   
   return (
-    <div className='footer'>
-        <p>Rows per page:</p>
-        <p>{currentSize}</p>
-        <select 
-          className='footer__selector'
-          value={currentSize}
-          onChange={(e) => countOfRows(e.target.value)}
+    <div className="footer">
+      <p>Rows per page:</p>
+      <p>{currentSize}</p>
+      <select
+        className="footer__selector"
+        value={currentSize}
+        onChange={e => countOfRows(e.target.value)}
+      >
+        {options.map(count => (
+          <option value={count} key={count}>
+            {count}
+          </option>
+        ))}
+      </select>
+      <p>{`${currentSize} off ${totalSize}`}</p>
+      <button
+          className={classNames('footer__arrow', {
+            red: !availableToDecrease,
+          })}
+          onClick={decreasePage}
+          disabled={!availableToDecrease}
         >
-            {options.map(count => (
-                <option 
-                  value={count} 
-                  key={count}
-                >
-                  {count}
-                </option>
-            ))}
-        </select>
-        <p>{`${currentSize} off ${totalSize}`}</p>
-        <label className='footer__move'>
-          <button
-            className='footer__arrow'
-            onClick={decreaseSize}
-            disabled={!availableToDecrease}
-          >
-            {'<'}
-          </button>
-        </label>
-       <label className='footer__move'>
-          <button
-            className='footer__arrow'
-            onClick={increaseSize}
-            disabled={!availableToIncrease}
-          >
-            {'>'}
-          </button>
-       </label>
+          {'<'}
+        </button>
+        <button
+          className={classNames('footer__arrow', {
+            red: !availableToIncrease,
+          })}
+          onClick={increasePage}
+          disabled={!availableToIncrease}
+        >
+          {'>'}
+        </button>
     </div>
-  )
+  );
 }
