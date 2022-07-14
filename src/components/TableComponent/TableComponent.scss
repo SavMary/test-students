@@ -64,6 +64,12 @@
     &__flex {
       display: flex;
     }
+
+    &__open {
+        display: flex;
+        justify-content: end;
+        font-weight: bold;
+    }
 }
 
 .tableLine {

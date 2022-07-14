@@ -61,15 +61,6 @@ export const Footer: React.FC = () => {
         setAvailableToDecrease(true);
         break;
     }
-    // if (currentPage === 1) {
-    //   setAvailableToIncrease(true);
-    //   setAvailableToDecrease(false);
-    // }
-
-    // if (currentPage === totalPage) {
-    //   setAvailableToIncrease(false);
-    //   setAvailableToDecrease(true); 
-    // }
   }, [currentPage])
 
   const decreasePage = () => {
@@ -85,19 +76,26 @@ export const Footer: React.FC = () => {
   
   return (
     <div className="footer">
-      <p>Rows per page:</p>
-      <p>{currentSize}</p>
-      <select
-        className="footer__selector"
-        value={currentSize}
-        onChange={e => countOfRows(e.target.value)}
-      >
-        {options.map(count => (
-          <option value={count} key={count}>
-            {count}
-          </option>
-        ))}
-      </select>
+      <p className="footer__rows">Rows per page:</p>
+      <label className="footer__selector-box">
+        <p>{currentSize}</p>
+        <select
+          className="footer__selector"
+          value={currentSize}
+          onChange={e => countOfRows(e.target.value)}
+        >
+          {options.map(count => (
+            <option 
+              value={count} 
+              key={count}
+              className="footer__selector-option"
+            >
+              {count}
+            </option>
+          ))}
+        </select>
+      </label>
+
       <p>{`${currentSize} off ${totalSize}`}</p>
       <button
           className={classNames('footer__arrow', {

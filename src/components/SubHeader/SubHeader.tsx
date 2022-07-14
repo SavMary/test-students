@@ -7,8 +7,9 @@ import { TableHeadComponent } from '../TableHeadComponent/TableHeadComponent';
 import './SubHeader.scss';
 import { useSelector } from 'react-redux';
 import { getCurrentPageSelector, getCurrentSizeSelector, getDataSelector } from '../../store/selectors';
+import { SelectedComponent } from '../SelectedComponent/SelectedComponent';
 
-const headers = [
+export const headers = [
   {label: "Name", key: "name"},
   {label: "ID", key: "id"},
   {label: "Class", key: "class"},
@@ -48,8 +49,6 @@ export const SubHeader: React.FC = () => {
     const dataFromServer = await getData(page, size);
 
     dispatch(setData(dataFromServer.data));
-
-    console.log('total', dataFromServer.data)
   };
 
   useEffect(() => {
@@ -61,7 +60,7 @@ export const SubHeader: React.FC = () => {
       console.log(error);
     }
   }, [page, size]);
-
+console.log(data, 'data')
   return (
     <>
       <div className="head">
@@ -89,6 +88,7 @@ export const SubHeader: React.FC = () => {
           <CSVLink {...csvReport} className="head__export">Export CSV</CSVLink>
         </button>
       </div>
+      <SelectedComponent />
       <TableHeadComponent title={title} />
     </>
   );

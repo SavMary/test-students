@@ -3,19 +3,26 @@ import { Data, Test } from '../../react-app-env';
 import classNames from 'classnames';
 import './TableComponent.scss';
 import { TestComponent } from '../TestComponent/TestComponent';
+import { useDispatch } from 'react-redux';
+import { setSelectedStudents } from '../../store';
 
 type Props = {
   data: Data
 }
 
 export const TableComponent:React.FC<Props> = ({ data }) => {
-  const [tests, setTests] = useState<Test[] | null>(null);
+  const dispatch = useDispatch();
+  const [selectedData, setSelectedData] = useState<Data | null>(null);
   const [isSelected, setIsSelected] = useState(false);
 
   const handlerClick = (data: Data) => {
-    setTests(data.tests);
-      setIsSelected(!isSelected);
+    setSelectedData(data);
+    setIsSelected(!isSelected);
   }
+
+  const handlerStudent = (data: Data[]) => {
+    dispatch(setSelectedStudents(data))
+  } 
 
   return (
     <>
@@ -28,17 +35,19 @@ export const TableComponent:React.FC<Props> = ({ data }) => {
       >
         <div className="tableLine">
           <label className="table__checkbox">
-            <input type="checkbox" />
+            <input 
+              type="checkbox" 
+            />
           </label>
           <p className="table__name">{data.name}</p>
           <p className="table__id">{data.id}</p>
           <p className="table__class">{data.class}</p>
           <p
             className={classNames('table__score', {
-              red: data.score <= '50',
-              yellow: data.score <= '80',
-              green: data.score > '80',
-              blue: data.score > '90',
+              red: data.score < '50',
+              yellow: data.score < '80',
+              green: data.score < '90',
+              blue: data.score >= '90',
             })}
           >
             {data.score}
@@ -61,7 +70,7 @@ export const TableComponent:React.FC<Props> = ({ data }) => {
           </p>
         </div>
       </div>
-      {isSelected && <TestComponent tests={tests}/>}
+      {isSelected && selectedData && <TestComponent selectedData={selectedData}/>}
     </>
   );
 }

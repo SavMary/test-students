@@ -7,6 +7,7 @@ export const setTotalPage = createAction<number>(ActionType.SET_TOTAL_PAGE);
 export const setCurrentPage = createAction<number>(ActionType.SET_CURRENT_PAGE);
 export const setTotalSize = createAction<number>(ActionType.SET_TOTAL_SIZE);
 export const setCurrentSize = createAction<number>(ActionType.SET_CURRENT_SIZE);
+export const setSelectedStudents = createAction<Data[]>(ActionType.SET_SELECTED_STUDENTS);
 
 const initialState: State = {
     data: [],
@@ -14,6 +15,7 @@ const initialState: State = {
     currentPage: 1,
     totalSize: 0,
     currentSize: 1,
+    selectedStudents: [],
   };
 
 const reducer = createReducer(initialState, (builder) => {
@@ -32,6 +34,9 @@ const reducer = createReducer(initialState, (builder) => {
     builder.addCase(setCurrentSize, (state, action) => {
         state.currentSize = action.payload;
     });
+    // builder.addCase(setSelectedStudents, (state: State, action) => {
+    //     state.selectedStudents.push(action.payload);
+    // });
 });
 
 export const store = configureStore({

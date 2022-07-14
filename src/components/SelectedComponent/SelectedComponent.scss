@@ -1,0 +1,38 @@
+.selected {
+    min-width: 1440px;
+    background-color: #c0c0c0;
+
+    &__container {
+        padding: 14px 40px;
+        color: #fff;
+        font-weight: 700;
+        box-sizing: border-box;
+        display: flex;
+        text-transform: uppercase;
+        align-items: center;
+    }
+
+    &__student {
+        font-size: 14px;
+    }
+
+    &__buttons {
+        display: flex;
+        padding-left: 600px;
+    }
+
+    &__button {
+        width: 200px;
+        font-size: 12px;
+        color: #fff;
+        border-color: transparent;
+        background-color: transparent;
+        text-transform: uppercase;
+        display: flex;
+        gap: 6px;
+
+        &--archive {
+            color: #424242;
+        }
+    }
+}

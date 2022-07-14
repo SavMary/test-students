@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
+import { Data } from '../../react-app-env';
 import { getFilteredByTitleSelector } from '../../store/selectors';
+// import { getByDecIdSelector, getByDecScoreSelector, getByDecSpeedSelector, getByGrowthIdSelector, getByGrowthScoreSelector, getByGrowthSpeedSelector, getFilteredByTitleSelector } from '../../store/selectors';
 import { TableComponent } from '../TableComponent/TableComponent';
 import './TableHeadComponent.scss';
 
@@ -9,8 +11,37 @@ type Props = {
 }
 
 export const TableHeadComponent: React.FC<Props>= ({ title }) => {
+  const [availableData, setAvailableData] = useState<Data[]>([])
   const filteredByTitle = useSelector(getFilteredByTitleSelector(title));
-  console.log(filteredByTitle, 'filtered');
+  // const filteredByGrowthId = useSelector(getByGrowthIdSelector())
+  // const filteredByDecId = useSelector(getByDecIdSelector())
+  // const filteredByGrowthScore = useSelector(getByGrowthScoreSelector())
+  // const filteredByDecScore = useSelector(getByDecScoreSelector())
+  // const filteredByGrowthSpeed = useSelector(getByGrowthSpeedSelector())
+  // const filteredByDecSpeed = useSelector(getByDecSpeedSelector())
+
+  // useEffect(() => {
+  //   setAvailableData(filteredByTitle)
+  // }, [title])
+
+  // const filterByGrowthId = () => {
+  //   setAvailableData(filteredByGrowthId);
+  // }
+  // const filterByDecId = () => {
+  //   setAvailableData(filteredByDecId);
+  // }
+  // const filterByGrowthScore = () => {
+  //   setAvailableData(filteredByGrowthScore);
+  // }
+  // const filterByDecScore = () => {
+  //   setAvailableData(filteredByDecScore);
+  // }
+  // const filterByGrowthSpeed = () => {
+  //   setAvailableData(filteredByGrowthSpeed);
+  // }
+  // const filterByDecSpeed = () => {
+  //   setAvailableData(filteredByDecSpeed);
+  // }
 
   return (
     <div className='tableContainer'>
@@ -31,8 +62,12 @@ export const TableHeadComponent: React.FC<Props>= ({ title }) => {
           <div className='table__flex'>
             <p className="table__id">ID</p>
             <div className='table__buttons--id'>
-              <button className='table__button'>{'^'}</button>
-              <button className='table__button table__button--rotate'>{'^'}</button>
+              <button 
+                className='table__button'
+              >{'^'}</button>
+              <button 
+                className='table__button table__button--rotate'
+              >{'^'}</button>
             </div>
           </div>
 
@@ -43,16 +78,24 @@ export const TableHeadComponent: React.FC<Props>= ({ title }) => {
           <div className='table__flex'>
             <p className="table__score table__score--filter">Av. Score, %</p>
             <div className='table__buttons'>
-              <button className='table__button'>{'^'}</button>
-              <button className='table__button table__button--rotate'>{'^'}</button>
+              <button 
+                className='table__button'
+              >{'^'}</button>
+              <button 
+                className='table__button table__button--rotate'
+              >{'^'}</button>
             </div>
           </div>
 
           <div className='table__flex'>
             <p className="table__speed">Av. Speed</p>
             <div className='table__buttons--speed'>
-              <button className='table__button'>{'^'}</button>
-              <button className='table__button table__button--rotate'>{'^'}</button>
+              <button 
+                className='table__button'
+              >{'^'}</button>
+              <button 
+                className='table__button table__button--rotate'
+              >{'^'}</button>
             </div>
           </div>
 

@@ -5,14 +5,8 @@ export interface State {
     currentPage: number,
     totalSize: number,
     currentSize: number,
+    selectedStudents: Data[],
 }
-
-// interface Obj {
-//   totalPages: number,
-//   data: Data[],
-//   tests: Test[],
-//   totalCount: number,
-// }
 
 interface Data {
     name: string,
